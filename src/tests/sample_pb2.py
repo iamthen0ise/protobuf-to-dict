@@ -28,7 +28,7 @@ EXTSTRING_FIELD_NUMBER = 101
 extString = _descriptor.FieldDescriptor(
   name='extString', full_name='tests.extString', index=1,
   number=101, type=9, cpp_type=9, label=1,
-  has_default_value=False, default_value=unicode("", "utf-8"),
+  has_default_value=False, default_value=str("", "utf-8"),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
   options=None)
@@ -69,7 +69,7 @@ _MESSAGEOFTYPES_NESTEDTYPE = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='req', full_name='tests.MessageOfTypes.NestedType.req', index=0,
       number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=str("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -187,7 +187,7 @@ _MESSAGEOFTYPES = _descriptor.Descriptor(
     _descriptor.FieldDescriptor(
       name='strng', full_name='tests.MessageOfTypes.strng', index=13,
       number=13, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=str("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),

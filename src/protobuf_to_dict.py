@@ -12,17 +12,17 @@ TYPE_CALLABLE_MAP = {
     FieldDescriptor.TYPE_DOUBLE: float,
     FieldDescriptor.TYPE_FLOAT: float,
     FieldDescriptor.TYPE_INT32: int,
-    FieldDescriptor.TYPE_INT64: long,
+    FieldDescriptor.TYPE_INT64: int,
     FieldDescriptor.TYPE_UINT32: int,
-    FieldDescriptor.TYPE_UINT64: long,
+    FieldDescriptor.TYPE_UINT64: int,
     FieldDescriptor.TYPE_SINT32: int,
-    FieldDescriptor.TYPE_SINT64: long,
+    FieldDescriptor.TYPE_SINT64: int,
     FieldDescriptor.TYPE_FIXED32: int,
-    FieldDescriptor.TYPE_FIXED64: long,
+    FieldDescriptor.TYPE_FIXED64: int,
     FieldDescriptor.TYPE_SFIXED32: int,
-    FieldDescriptor.TYPE_SFIXED64: long,
+    FieldDescriptor.TYPE_SFIXED64: int,
     FieldDescriptor.TYPE_BOOL: bool,
-    FieldDescriptor.TYPE_STRING: unicode,
+    FieldDescriptor.TYPE_STRING: str,
     FieldDescriptor.TYPE_BYTES: lambda b: b.encode("base64"),
     FieldDescriptor.TYPE_ENUM: int,
 }
@@ -86,7 +86,7 @@ def dict_to_protobuf(pb_klass_or_instance, values, type_callable_map=REVERSE_TYP
 
     :param pb_klass_or_instance: a protobuf message class, or an protobuf instance
     :type pb_klass_or_instance: a type or instance of a subclass of google.protobuf.message.Message
-    :param dict values: a dictionary of values. Repeated and nested values are 
+    :param dict values: a dictionary of values. Repeated and nested values are
        fully supported.
     :param dict type_callable_map: a mapping of protobuf types to callables for setting
        values on the target instance.
