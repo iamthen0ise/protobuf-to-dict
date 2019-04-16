@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/iamthen0ise/protobuf-to-dict.svg?branch=master)](https://travis-ci.org/iamthen0ise/protobuf-to-dict)
+
+# Disclaimer: This fork is Experimental for Python 3.4! Please be very careful of using in prodiction!
+
+
 # protobuf-to-dict
 
 protobuf-to-dict is a small Python library for creating dicts from protocol
