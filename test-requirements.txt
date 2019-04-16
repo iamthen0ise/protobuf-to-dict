@@ -1,0 +1,4 @@
+protobuf>=2.3.0
+nose>=1.0
+coverage
+nosexcover

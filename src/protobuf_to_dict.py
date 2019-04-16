@@ -23,7 +23,7 @@ TYPE_CALLABLE_MAP = {
     FieldDescriptor.TYPE_SFIXED64: int,
     FieldDescriptor.TYPE_BOOL: bool,
     FieldDescriptor.TYPE_STRING: str,
-    FieldDescriptor.TYPE_BYTES: lambda b: b.encode("base64"),
+    FieldDescriptor.TYPE_BYTES: bytes,
     FieldDescriptor.TYPE_ENUM: int,
 }
 
@@ -73,7 +73,7 @@ def _get_field_value_adaptor(pb, field, type_callable_map=TYPE_CALLABLE_MAP, use
 
 
 def get_bytes(value):
-    return value.decode('base64')
+    return value
 
 
 REVERSE_TYPE_CALLABLE_MAP = {
@@ -136,7 +136,7 @@ def _dict_to_protobuf(pb, value, type_callable_map, strict):
                 if field.type == FieldDescriptor.TYPE_MESSAGE:
                     m = pb_value.add()
                     _dict_to_protobuf(m, item, type_callable_map, strict)
-                elif field.type == FieldDescriptor.TYPE_ENUM and isinstance(item, basestring):
+                elif field.type == FieldDescriptor.TYPE_ENUM and isinstance(item, str):
                     pb_value.append(_string_to_enum(field, item))
                 else:
                     pb_value.append(item)
@@ -152,7 +152,7 @@ def _dict_to_protobuf(pb, value, type_callable_map, strict):
             pb.Extensions[field] = input_value
             continue
 
-        if field.type == FieldDescriptor.TYPE_ENUM and isinstance(input_value, basestring):
+        if field.type == FieldDescriptor.TYPE_ENUM and isinstance(input_value, str):
             input_value = _string_to_enum(field, input_value)
 
         setattr(pb, field.name, input_value)
