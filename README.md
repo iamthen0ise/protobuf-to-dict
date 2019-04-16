@@ -63,7 +63,7 @@ string labels instead, pass `use_enum_labels=True` into `protobuf_to_dict`:
 Tests are under `src/tests/`.
 
 ```sh
-$ python setup.py nosetests
+$ nosetests src/tests/<test_file.py>
 ```
 
 To regenerate `src/tests/sample_pb2.py`:
