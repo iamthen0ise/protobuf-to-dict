@@ -9,4 +9,9 @@ install:
   - pip install -r test-requirements.txt
 
 script:
-  - nosetests src/tests/test_proto_to_dict.py --with-coverage
+  - flake8 --config setup.cfg
+  - isort
+  - pytest --cov src/åå
+
+after_success:
+  - codecov
