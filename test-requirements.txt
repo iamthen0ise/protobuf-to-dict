@@ -1,5 +1,5 @@
 protobuf>=2.3.0
-pytest==3.6
+pytest==9.0.3
 pytest-cov
 flake8
 isort
